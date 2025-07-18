@@ -36,11 +36,14 @@ const Header = () => {
                                 Cyber
                             </div>
 
-                            <div className="hidden md:block w-100">
+                            <div className="hidden md:block w-100 relative">
+                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <FaSearch className="h-4 w-4 text-gray-400" />
+                                </div>
                                 <input
                                     type="text"
                                     placeholder="Search"
-                                    className="w-full px-5 py-3 bg-gray-100 border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+                                    className="w-full pl-10 pr-5 py-3 bg-gray-100 border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
                                 />
                             </div>
 
@@ -53,11 +56,16 @@ const Header = () => {
 
                             {isSearchOpen && (
                                 <div className="md:hidden absolute top-16 left-0 right-0 px-4 z-10 bg-white">
-                                    <input
-                                        type="text"
-                                        placeholder="Search"
-                                        className="w-full px-5 py-3 bg-gray-100 border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
-                                    />
+                                    <div className="relative">
+                                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <FaSearch className="h-4 w-4 text-gray-400" />
+                                        </div>
+                                        <input
+                                            type="text"
+                                            placeholder="Search"
+                                            className="w-full pl-10 pr-5 py-3 bg-gray-100 border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+                                        />
+                                    </div>
                                 </div>
                             )}
 
