@@ -1,7 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Header from '../components/Header'
-import Home from '../components/home'
+import Home from '../components/Home'
+import Item from '../components/Item'
+import Promotion from "@/components/Promotion";
+import Footer  from "@/components/Footer";// Add this import
 
 const HomePage: NextPage = () => {
     return (
@@ -17,6 +20,13 @@ const HomePage: NextPage = () => {
             </header>
 
             <Home />
+
+
+            <Item />
+
+            <Promotion />
+
+            <Footer />
         </>
     )
 }
