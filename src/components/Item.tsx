@@ -65,18 +65,26 @@ const Item = () => {
 
     // Reusable ProductCard component with clean heart icon
     const ProductCard = ({ product }: { product: Product }) => (
-        <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
+        <div
+            className="overflow-hidden h-full flex flex-col"
+            style={{
+                width: '268px',
+                minHeight: '432px',
+                borderRadius: '9px',
+                backgroundColor: '#F6F6F6'
+            }}
+        >
             {/* Heart Icon - Top Right */}
             <div className="relative">
                 <button
                     onClick={() => handleWishlistClick(product.id)}
-                    className="absolute top-3 right-3 z-10 p-2 hover:scale-110 transition-transform duration-200"
+                    className="absolute top-3 right-3 z-10 p-2"
                 >
                     <svg
-                        className={`w-5 h-5 transition-colors duration-200 ${
+                        className={`w-8 h-8 ${
                             wishlistedItems.has(product.id)
                                 ? 'fill-red-500 text-red-500'
-                                : 'fill-none text-gray-400 hover:text-red-500'
+                                : 'fill-none text-gray-400'
                         }`}
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -90,13 +98,14 @@ const Item = () => {
                     </svg>
                 </button>
 
-                {/* Product Image - Fixed height */}
-                <div className="aspect-square bg-[#F6F6F6] flex items-center justify-center p-8">
-                    <div className="w-full h-full relative">
+                {/* Product Image - Fixed 160px x 160px */}
+                <div className="flex items-center justify-center p-8 pt-19" style={{ backgroundColor: '#F6F6F6' }}>
+                    <div className="relative" style={{ width: '160px', height: '160px' }}>
                         <img
                             src={product.image}
                             alt={product.name}
-                            className="w-full h-full object-contain"
+                            className="object-contain"
+                            style={{ width: '160px', height: '160px' }}
                         />
                     </div>
                 </div>
@@ -105,20 +114,41 @@ const Item = () => {
             {/* Product Details - Flex grow to fill remaining space */}
             <div className="p-4 flex flex-col flex-grow">
                 {/* Product Title - Fixed height container */}
-                <div className="h-12 mb-3 flex items-center justify-center">
-                    <h3 className="text-sm sm:text-base font-medium text-gray-800 line-clamp-2 text-center leading-tight">
+                <div className="h-2 mb-8 flex items-center justify-center">
+                    <h3 className="text-gray-800 line-clamp-2 text-center leading-tight"
+                        style={{
+                            fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                            fontWeight: 500,
+                            fontSize: '16px',
+                            letterSpacing: '0%'
+                        }}>
                         {product.name}
                     </h3>
                 </div>
 
-                {/* Price - Fixed height */}
-                <div className="text-2xl font-bold text-gray-900 text-center mb-4 h-8 flex items-center justify-center">
+                {/* Price - Updated with production specifications */}
+                <div className="text-gray-900 text-center mb-4 h-8 flex items-center justify-center"
+                     style={{
+                         fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                         fontWeight: 600,
+                         fontSize: '24px',
+                         letterSpacing: '3%'
+                     }}>
                     {product.price}
                 </div>
 
                 {/* Buy Now Button - Always at bottom */}
-                <div className="mt-auto">
-                    <button className="w-full bg-black text-white py-3 px-4 rounded-lg font-semibold text-sm hover:bg-gray-800 transition-colors duration-200 hover:shadow-md transform hover:scale-[1.02] active:scale-[0.98]">
+                <div className="mt-auto flex justify-center">
+                    <button className="bg-black text-white hover:bg-gray-800 transition-colors duration-200 hover:shadow-md transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center"
+                            style={{
+                                width: '183px',
+                                height: '48px',
+                                borderRadius: '8px',
+                                fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                                fontWeight: 500,
+                                fontSize: '14px',
+                                letterSpacing: '0%'
+                            }}>
                         Buy Now
                     </button>
                 </div>
@@ -130,7 +160,7 @@ const Item = () => {
         const currentProducts = productData[activeCategory as keyof typeof productData] || []
 
         return (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center">
                 {currentProducts.map((product) => (
                     <ProductCard key={product.id} product={product} />
                 ))}
@@ -139,38 +169,49 @@ const Item = () => {
     }
 
     return (
-        <div className="w-full bg-white py-12">
+        <div className="w-full bg-white">
+            {/* Category Navigation - Aligned with header layout */}
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                {/* Category Buttons */}
-                <div className="flex flex-row justify-center items-center gap-2 sm:gap-8 mb-8">
-                    {categories.map((category) => (
-                        <button
-                            key={category}
-                            onClick={() => handleCategoryClick(category)}
-                            className={`
-                                px-3 py-2 sm:px-6 sm:py-3 rounded-lg font-semibold 
-                                text-sm sm:text-lg transition-all duration-300 ease-in-out
-                                flex-1 sm:flex-none sm:min-w-[180px] h-12 sm:h-auto
-                                hover:shadow-lg hover:scale-105 transform
-                                ${activeCategory === category
-                                ? 'bg-black text-white shadow-lg'
-                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                            }
-                            `}
-                        >
-                            <span className="block sm:hidden text-xs leading-tight text-center">
-                                {category.split(' ').map((word, index) => (
-                                    <div key={index}>{word}</div>
-                                ))}
-                            </span>
-                            <span className="hidden sm:block">
-                                {category}
-                            </span>
-                        </button>
-                    ))}
-                </div>
+                <div className="pt-20 pb-3">
+                    <div className="flex items-center justify-start gap-8">
+                        {categories.map((category) => (
+                            <button
+                                key={category}
+                                onClick={() => handleCategoryClick(category)}
+                                className={`
+                                    relative font-medium transition-all duration-300 whitespace-nowrap pb-2
+                                    ${activeCategory === category
+                                    ? 'text-black font-semibold'
+                                    : 'text-[#8B8B8B] hover:text-black'
+                                }
+                                `}
+                                style={{
+                                    fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                                    fontWeight: 500,
+                                    fontSize: '18px',
+                                    letterSpacing: '0%'
+                                }}
+                            >
 
-                {/* Content Area */}
+                                {category}
+                                {/* Active underline */}
+                                <div
+                                    className={`
+                                        absolute bottom-0 left-0 h-0.5 bg-black transition-all duration-300 ease-in-out
+                                        ${activeCategory === category
+                                        ? 'w-full opacity-100'
+                                        : 'w-0 opacity-0'
+                                    }
+                                    `}
+                                />
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            {/* Content Area */}
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="py-8">
                     {renderContent()}
                 </div>

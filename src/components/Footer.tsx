@@ -2,45 +2,62 @@ const Footer = () => {
     return (
         <footer className="w-full">
             <div className="w-full h-[400px] bg-black relative">
-                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8">
-                    <div className="text-white text-[32px] font-bold mb-4">
-                        Cyber
-                    </div>
-                    <div className="text-white text-[14px]">
-                        <div>We are a residential interior design firm located in Portland. Our</div>
-                        <div>boutique-studio offers more than</div>
-                    </div>
-
-                    {/* Services Section - Slightly Right of Center */}
-                    <div className="absolute inset-0 flex items-center justify-center pl-32">
-                        <div className="flex flex-col items-center">
-                            <div className="text-white text-[18px] font-bold mb-6">
-                                Services
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-25">
+                    {/* Top row with logo and sections aligned */}
+                    <div className="flex justify-between items-start">
+                        {/* Logo and description */}
+                        <div className="flex-1">
+                            <div className="mb-4">
+                                <img
+                                    src="/Logo1.png"
+                                    alt="Cyber Logo"
+                                    style={{ width: '95.9px', height: '28.28px' }}
+                                />
                             </div>
-                            <div className="text-white text-[16px] space-y-3 text-center">
-                                <div>Bonus program</div>
-                                <div>Gift cards</div>
-                                <div>Credit and payment</div>
-                                <div>Service contracts</div>
-                                <div>Non-cash account</div>
-                                <div>Payment</div>
+                            <div className="text-white text-[14px] font-medium" style={{ fontFamily: 'SF Pro Display', fontWeight: 500 }}>
+                                <div>We are a residential interior design firm located in Portland. Our</div>
+                                <div>boutique-studio offers more than</div>
                             </div>
                         </div>
-                    </div>
 
-                    {/* Assistance to the Buyer - Right Side */}
-                    <div className="absolute inset-0 flex items-center justify-end pr-20">
-                        <div className="flex flex-col items-center">
-                            <div className="text-white text-[16px] font-bold mb-6">
-                                Assistance to the Buyer
+                        {/* Services Section */}
+                        <div className="flex-1 flex justify-center">
+                            <div className="flex flex-col items-center">
+                                <div className="text-white text-[16px] font-semibold mb-6" style={{ fontFamily: 'SF Pro Display', fontWeight: 600 }}>
+                                    Services
+                                </div>
+                                <div className="text-white text-[14px] space-y-3 text-center font-light" style={{ fontFamily: 'SF Pro Display', fontWeight: 300 }}>
+                                    <div>Bonus program</div>
+                                    <div>Gift cards</div>
+                                    <div>Credit and payment</div>
+                                    <div>Service contracts</div>
+                                    <div>Non-cash account</div>
+                                    <div>Payment</div>
+                                </div>
                             </div>
-                            <div className="text-white text-[16px] space-y-3 text-center">
-                                <div>Find an order</div>
-                                <div>Terms of delivery</div>
-                                <div>Exchange and return of goods</div>
-                                <div>Guarantee</div>
-                                <div>Frequently asked questions</div>
-                                <div>Terms of use of the site</div>
+                        </div>
+
+                        {/* Assistance to the Buyer Section */}
+                        <div className="flex-1 flex justify-end">
+                            <div className="flex flex-col items-center">
+                                <div className="flex items-center mb-6">
+                                    <img
+                                        src="/User.png"
+                                        alt="User"
+                                        style={{ width: '32px', height: '32px', marginRight: '8px' }}
+                                    />
+                                    <div className="text-white text-[16px] font-semibold" style={{ fontFamily: 'SF Pro Display', fontWeight: 600 }}>
+                                        Assistance to the Buyer
+                                    </div>
+                                </div>
+                                <div className="text-white text-[14px] space-y-3 text-center font-light" style={{ fontFamily: 'SF Pro Display', fontWeight: 300 }}>
+                                    <div>Find an order</div>
+                                    <div>Terms of delivery</div>
+                                    <div>Exchange and return of goods</div>
+                                    <div>Guarantee</div>
+                                    <div>Frequently asked questions</div>
+                                    <div>Terms of use of the site</div>
+                                </div>
                             </div>
                         </div>
                     </div>

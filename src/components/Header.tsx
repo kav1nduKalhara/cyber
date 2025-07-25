@@ -1,19 +1,8 @@
 import { useState } from 'react'
 import {
-    FaHeart,
-    FaShoppingCart,
-    FaUser,
-    FaMobile,
-    FaLaptop,
-    FaClock,
-    FaCamera,
-    FaHeadphones,
-    FaGamepad,
     FaBars,
     FaTimes,
-    FaSearch,
 } from 'react-icons/fa'
-import { BsSmartwatch } from "react-icons/bs";
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -27,53 +16,73 @@ const Header = () => {
         setIsSearchOpen(!isSearchOpen)
     }
 
+    const handleFavoritesClick = () => {
+
+    }
+
+    const handleCartClick = () => {
+
+    }
+
+    const handleUserClick = () => {
+    }
+
     return (
         <>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <nav className="w-full py-3 bg-white">
                     <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-2 sm:space-x-4 md:space-x-10 flex-1">
-                            <div className="text-black text-xl font-bold flex-shrink-0">
-                                Cyber
+                        <div className="flex items-center">
+                            <div className="flex-shrink-0">
+                                <img
+                                    src="/Logo.png"
+                                    alt="Logo"
+                                    style={{ width: '95.9px', height: '28.28px' }}
+                                />
                             </div>
 
                             {/* Desktop Search Bar */}
-                            <div className="hidden md:block flex-1 max-w-md lg:max-w-lg xl:max-w-xl relative">
-                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <FaSearch className="h-4 w-4 text-gray-400" />
+                            <div className="hidden md:block relative" style={{ marginLeft: '40px' }}>
+                                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                    <img
+                                        src="/search.png"
+                                        alt="Search"
+                                        style={{ width: '24px', height: '24px' }}
+                                    />
                                 </div>
                                 <input
                                     type="text"
                                     placeholder="Search"
-                                    className="w-full pl-10 pr-5 py-3 bg-gray-100 border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+                                    style={{
+                                        width: '433px',
+                                        height: '56px',
+                                        borderRadius: '8px',
+                                        paddingLeft: '56px',
+                                        paddingRight: '16px',
+                                        gap: '8px',
+                                        backgroundColor: '#F5F5F5',
+                                        fontWeight: '500'
+                                    }}
+                                    className="border-0 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black"
                                 />
                             </div>
 
-                            {/* Mobile Search Bar - Always visible on small screens */}
-                            <div className="md:hidden flex-1 max-w-xs relative">
-                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <FaSearch className="h-4 w-4 text-gray-400" />
+                            {/* Navigation Links with 30px gap from search */}
+                            <div className="hidden md:flex items-center" style={{ marginLeft: '50px' }}>
+                                <div className="flex items-center" style={{ gap: '52px' }}>
+                                    <a href="#" className="text-gray-400 hover:text-black transition-colors duration-200 whitespace-nowrap text-base font-medium">
+                                        Home
+                                    </a>
+                                    <a href="#" className="text-gray-400 hover:text-black transition-colors duration-200 whitespace-nowrap text-base font-medium">
+                                        About
+                                    </a>
+                                    <a href="#" className="text-gray-400 hover:text-black transition-colors duration-200 whitespace-nowrap text-base font-medium">
+                                        Contact us
+                                    </a>
+                                    <a href="#" className="text-gray-400 hover:text-black transition-colors duration-200 whitespace-nowrap text-base font-medium">
+                                        Blog
+                                    </a>
                                 </div>
-                                <input
-                                    type="text"
-                                    placeholder="Search"
-                                    className="w-full pl-10 pr-3 py-2 text-sm bg-gray-100 border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
-                                />
-                            </div>
-
-                            <div className="hidden md:flex items-center space-x-4 lg:space-x-10">
-                                <a href="#" className="text-gray-400 font-bold hover:text-black transition-colors duration-200 whitespace-nowrap">
-                                    Home
-                                </a>
-                                <a href="#" className="text-gray-400 font-bold hover:text-black transition-colors duration-200 whitespace-nowrap">
-                                    About
-                                </a>
-                                <a href="#" className="text-gray-400 font-bold hover:text-black transition-colors duration-200 whitespace-nowrap">
-                                    Contact us
-                                </a>
-                                <a href="#" className="text-gray-400 font-bold hover:text-black transition-colors duration-200 whitespace-nowrap">
-                                    Blog
-                                </a>
                             </div>
                         </div>
 
@@ -89,15 +98,39 @@ const Header = () => {
                                 )}
                             </button>
 
-                            <div className="hidden md:flex items-center space-x-1 lg:space-x-8">
-                                <button className="text-black hover:text-gray-400 transition-colors duration-200">
-                                    <FaHeart className="w-5 h-5" />
+                            <div className="hidden md:flex items-center" style={{ gap: '24px' }}>
+                                <button
+                                    className="text-black hover:text-gray-400 transition-colors duration-200 p-1 rounded-md hover:bg-gray-100"
+                                    onClick={handleFavoritesClick}
+                                    aria-label="Favorites"
+                                >
+                                    <img
+                                        src="/Favorites.png"
+                                        alt="Favorites"
+                                        style={{ width: '32px', height: '32px' }}
+                                    />
                                 </button>
-                                <button className="text-black hover:text-gray-400 transition-colors duration-200">
-                                    <FaShoppingCart className="w-5 h-5" />
+                                <button
+                                    className="text-black hover:text-gray-400 transition-colors duration-200 p-1 rounded-md hover:bg-gray-100"
+                                    onClick={handleCartClick}
+                                    aria-label="Shopping Cart"
+                                >
+                                    <img
+                                        src="/Cart.png"
+                                        alt="Cart"
+                                        style={{ width: '32px', height: '32px' }}
+                                    />
                                 </button>
-                                <button className="text-black hover:text-gray-400 transition-colors duration-200">
-                                    <FaUser className="w-5 h-5" />
+                                <button
+                                    className="text-black hover:text-gray-400 transition-colors duration-200 p-1 rounded-md hover:bg-gray-100"
+                                    onClick={handleUserClick}
+                                    aria-label="User Profile"
+                                >
+                                    <img
+                                        src="/User.png"
+                                        alt="User"
+                                        style={{ width: '32px', height: '32px' }}
+                                    />
                                 </button>
                             </div>
 
@@ -108,32 +141,59 @@ const Header = () => {
                     {isMenuOpen && (
                         <div className="md:hidden mt-4 space-y-4 pb-4 border-t border-gray-200 pt-4">
                             <div className="flex flex-col space-y-4">
-                                <a href="#" className="text-gray-400 font-bold hover:text-black transition-colors duration-200">
+                                <a href="#" className="text-gray-400 hover:text-black transition-colors duration-200 text-base font-medium">
                                     Home
                                 </a>
-                                <a href="#" className="text-gray-400 font-bold hover:text-black transition-colors duration-200">
+                                <a href="#" className="text-gray-400 hover:text-black transition-colors duration-200 text-base font-medium">
                                     About
                                 </a>
-                                <a href="#" className="text-gray-400 font-bold hover:text-black transition-colors duration-200">
+                                <a href="#" className="text-gray-400 hover:text-black transition-colors duration-200 text-base font-medium">
                                     Contact us
                                 </a>
-                                <a href="#" className="text-gray-400 font-bold hover:text-black transition-colors duration-200">
+                                <a href="#" className="text-gray-400 hover:text-black transition-colors duration-200 text-base font-medium">
                                     Blog
                                 </a>
                             </div>
 
                             {/* Mobile Action Icons in Menu */}
-                            <div className="flex items-center justify-center space-x-8 pt-4 border-t border-gray-100">
-                                <button className="flex flex-col items-center text-black hover:text-gray-400 transition-colors duration-200">
-                                    <FaHeart className="w-5 h-5 mb-1" />
+                            <div className="flex items-center justify-center pt-4 border-t border-gray-100" style={{ gap: '24px' }}>
+                                <button
+                                    className="flex flex-col items-center text-black hover:text-gray-400 transition-colors duration-200 p-2 rounded-md hover:bg-gray-100"
+                                    onClick={handleFavoritesClick}
+                                    aria-label="Favorites"
+                                >
+                                    <img
+                                        src="/Favorites.png"
+                                        alt="Favorites"
+                                        style={{ width: '32px', height: '32px' }}
+                                        className="mb-1"
+                                    />
                                     <span className="text-xs font-medium">Wishlist</span>
                                 </button>
-                                <button className="flex flex-col items-center text-black hover:text-gray-400 transition-colors duration-200">
-                                    <FaShoppingCart className="w-5 h-5 mb-1" />
+                                <button
+                                    className="flex flex-col items-center text-black hover:text-gray-400 transition-colors duration-200 p-2 rounded-md hover:bg-gray-100"
+                                    onClick={handleCartClick}
+                                    aria-label="Shopping Cart"
+                                >
+                                    <img
+                                        src="/Cart.png"
+                                        alt="Cart"
+                                        style={{ width: '32px', height: '32px' }}
+                                        className="mb-1"
+                                    />
                                     <span className="text-xs font-medium">Cart</span>
                                 </button>
-                                <button className="flex flex-col items-center text-black hover:text-gray-400 transition-colors duration-200">
-                                    <FaUser className="w-5 h-5 mb-1" />
+                                <button
+                                    className="flex flex-col items-center text-black hover:text-gray-400 transition-colors duration-200 p-2 rounded-md hover:bg-gray-100"
+                                    onClick={handleUserClick}
+                                    aria-label="User Profile"
+                                >
+                                    <img
+                                        src="/User.png"
+                                        alt="User"
+                                        style={{ width: '32px', height: '32px' }}
+                                        className="mb-1"
+                                    />
                                     <span className="text-xs font-medium">Profile</span>
                                 </button>
                             </div>
@@ -142,31 +202,80 @@ const Header = () => {
                 </nav>
             </div>
 
-            <div className="hidden md:block w-full bg-gray-900 py-3">
+            <div className="hidden md:block w-full py-3" style={{ backgroundColor: '#2E2E2E' }}>
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between space-x-4 lg:space-x-8">
-                        <button className="flex items-center text-gray-400 hover:text-gray-300 transition-colors duration-200">
-                            <FaMobile className="w-4 h-4 mr-2" />
+                        <button className="flex items-center transition-colors duration-200 font-medium" style={{ color: 'white', opacity: '0.5' }}>
+                            <img
+                                src="/Phones.png"
+                                alt="Phones"
+                                style={{ width: '24px', height: '24px', marginRight: '8px' }}
+                            />
                             Phone
                         </button>
-                        <button className="flex items-center text-gray-400 hover:text-gray-300 transition-colors duration-200">
-                            <FaLaptop className="w-4 h-4 mr-2" />
+                        <img
+                            src="/Devider.png"
+                            alt="Divider"
+                            style={{ width: '0px', height: '24px', border: '1px solid #666' }}
+                        />
+                        <button className="flex items-center transition-colors duration-200 font-medium" style={{ color: 'white', opacity: '0.5' }}>
+                            <img
+                                src="/Computers.png"
+                                alt="Computers"
+                                style={{ width: '24px', height: '24px', marginRight: '8px' }}
+                            />
                             Computer
                         </button>
-                        <button className="flex items-center text-gray-400 hover:text-gray-300 transition-colors duration-200">
-                            <BsSmartwatch className="w-4 h-4 mr-2" />
+                        <img
+                            src="/Devider.png"
+                            alt="Divider"
+                            style={{ width: '0px', height: '24px', border: '1px solid #666' }}
+                        />
+                        <button className="flex items-center transition-colors duration-200 font-medium" style={{ color: 'white', opacity: '0.5' }}>
+                            <img
+                                src="/Gaming.png"
+                                alt="Smart Watch"
+                                style={{ width: '24px', height: '24px', marginRight: '8px' }}
+                            />
                             Smart Watch
                         </button>
-                        <button className="flex items-center text-gray-400 hover:text-gray-300 transition-colors duration-200">
-                            <FaCamera className="w-4 h-4 mr-2" />
+                        <img
+                            src="/Devider.png"
+                            alt="Divider"
+                            style={{ width: '0px', height: '24px', border: '1px solid #666' }}
+                        />
+                        <button className="flex items-center transition-colors duration-200 font-medium" style={{ color: 'white', opacity: '0.5' }}>
+                            <img
+                                src="/Cameras.png"
+                                alt="Cameras"
+                                style={{ width: '24px', height: '24px', marginRight: '8px' }}
+                            />
                             Camera
                         </button>
-                        <button className="flex items-center text-gray-400 hover:text-gray-300 transition-colors duration-200">
-                            <FaHeadphones className="w-4 h-4 mr-2" />
+                        <img
+                            src="/Devider.png"
+                            alt="Divider"
+                            style={{ width: '0px', height: '24px', border: '1px solid #666' }}
+                        />
+                        <button className="flex items-center transition-colors duration-200 font-medium" style={{ color: 'white', opacity: '0.5' }}>
+                            <img
+                                src="/Headphones.png"
+                                alt="Headphones"
+                                style={{ width: '24px', height: '24px', marginRight: '8px' }}
+                            />
                             Headphones
                         </button>
-                        <button className="flex items-center text-gray-400 hover:text-gray-300 transition-colors duration-200">
-                            <FaGamepad className="w-4 h-4 mr-2" />
+                        <img
+                            src="/Devider.png"
+                            alt="Divider"
+                            style={{ width: '0px', height: '24px', border: '1px solid #666' }}
+                        />
+                        <button className="flex items-center transition-colors duration-200 font-medium" style={{ color: 'white', opacity: '0.5' }}>
+                            <img
+                                src="/Gaming.png"
+                                alt="Gaming"
+                                style={{ width: '24px', height: '24px', marginRight: '8px' }}
+                            />
                             Gaming
                         </button>
                     </div>
