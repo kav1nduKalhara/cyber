@@ -5,7 +5,7 @@ const Home = () => {
         <div className="flex flex-col min-h-screen">
             <main className="bg-[#211c24] min-h-[705px]">
                 <div className="mx-auto max-w-7xl h-full">
-                    {/* Desktop Layout */}
+
                     <div className="hidden md:flex md:flex-row h-full items-center">
                         <div className="w-full md:w-1/2 flex flex-col justify-center pl-4 sm:pl-6 lg:pl-8 pr-6 pt-16 md:pt-0">
                             <div className="mb-2">
@@ -37,27 +37,22 @@ const Home = () => {
                         </div>
                     </div>
 
-                    {/* Mobile Layout */}
-                    <div className="flex md:hidden flex-col items-center text-center px-4 py-16 h-screen">
-                        {/* Text Content */}
-                        <div className="flex flex-col items-center mb-6 mt-8">
+                    <div className="flex md:hidden flex-col items-center text-center px-0 py-(-10) h-screen">
+
+                        <div className="flex flex-col items-center mb-6 mt-20">
                             <div className="mb-4">
                                 <span className="text-white opacity-40 leading-[25px] font-semibold text-[25px]">
-                                    Pro. Beyond.
-                                </span>
-                            </div>
-                            <div className="mb-3">
-                                <span className="text-white text-[96px] leading-[1.1] block tracking-[-1%]" style={{ fontWeight: 200, fontFamily: 'SF Pro Display, system-ui, -apple-system, sans-serif' }}>
-                                    iPhone 14
+                                    Pro.Beyond.
                                 </span>
                             </div>
                             <div className="mb-6">
-                                <span className="text-white text-[96px] leading-[1.1] block tracking-[-1%]" style={{ fontWeight: 600, fontFamily: 'SF Pro Display, system-ui, -apple-system, sans-serif' }}>
-                                    Pro
+                                <span className="text-white text-[72px] leading-[1] tracking-[-1%]">
+                                    <span style={{ fontWeight: '200', fontFamily: 'SF Pro Display, system-ui, -apple-system, sans-serif' }}>IPhone 14</span>{' '}
+                                    <span style={{ fontWeight: '600', fontFamily: 'SF Pro Display, system-ui, -apple-system, sans-serif' }}>Pro</span>
                                 </span>
                             </div>
                             <div className="mb-8 px-4">
-                                <p className="text-[18px] leading-[1.4] text-[#909090] max-w-sm" style={{ fontWeight: '500', letterSpacing: '0%', fontFamily: 'SF Pro Display, system-ui, -apple-system, sans-serif' }}>
+                                <p className="text-[19px] leading-[1.4] text-[#909090] max-w-sm" style={{ fontWeight: '500', letterSpacing: '0%', fontFamily: 'SF Pro Display, system-ui, -apple-system, sans-serif' }}>
                                     Created to change everything for the better. For everyone.
                                 </p>
                             </div>
@@ -68,20 +63,20 @@ const Home = () => {
                             </div>
                         </div>
 
-                        {/* Image - Fixed at Bottom */}
-                        <div className="mt-auto w-full max-w-md pb-8">
-                            <div className="relative w-full h-[280px] sm:h-[350px]">
-                                <Image src="/iphone.jpg" alt="iPhone 16 Pro" layout="fill" objectFit="contain" priority/>
+
+                        <div className="mt-auto w-full relative">
+                            <div className="absolute bottom-[-65px] left--60 w-[380px] h-[500px]">
+                                <Image src="/Iphone.png" alt="iPhone 16 Pro" layout="fill" objectFit="cover" priority/>
                             </div>
                         </div>
                     </div>
                 </div>
             </main>
 
-            {/* New Mobile AirPods Max Section - Only visible on mobile */}
+
             <div className="block md:hidden bg-[white] py-12">
                 <div className="flex flex-col items-center text-center px-6 max-w-sm mx-auto">
-                    {/* Image */}
+
                     <div className="mb-8 w-full">
                         <div className="relative w-full h-[200px] sm:h-[250px]">
                             <Image
@@ -94,14 +89,14 @@ const Home = () => {
                         </div>
                     </div>
 
-                    {/* Title */}
+
                     <div className="mb-4">
                         <h2 className="text-[32px] sm:text-[36px] font-bold text-[#211c24] leading-[1.2]" style={{ fontFamily: 'SF Pro Display, system-ui, -apple-system, sans-serif' }}>
                             Apple AirPods Max
                         </h2>
                     </div>
 
-                    {/* Subtitle */}
+
                     <div className="mb-6">
                         <p className="text-[16px] sm:text-[18px] text-[#666] leading-[1.4] italic" style={{ fontFamily: 'SF Pro Display, system-ui, -apple-system, sans-serif' }}>
                             Computational audio. Listen, it&#39;s powerful.
@@ -110,10 +105,10 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* New Mobile Apple Vision Pro Section - Only visible on mobile */}
+
             <div className="block md:hidden bg-gray-700 py-12">
                 <div className="flex flex-col items-center text-center px-6 max-w-sm mx-auto">
-                    {/* Image */}
+
                     <div className="mb-8 w-full">
                         <div className="relative w-full h-[200px] sm:h-[250px]">
                             <Image
@@ -126,14 +121,14 @@ const Home = () => {
                         </div>
                     </div>
 
-                    {/* Title */}
+
                     <div className="mb-4">
                         <h2 className="text-[32px] sm:text-[36px] font-bold text-[white] leading-[1.2]" style={{ fontFamily: 'SF Pro Display, system-ui, -apple-system, sans-serif' }}>
                             Apple Vision Pro
                         </h2>
                     </div>
 
-                    {/* Subtitle */}
+
                     <div className="mb-6">
                         <p className="text-[16px] sm:text-[18px] text-gray-400 leading-[1.4] italic" style={{ fontFamily: 'SF Pro Display, system-ui, -apple-system, sans-serif' }}>
                             An immersive way to experience entertainment
@@ -142,7 +137,7 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* New Mobile PlayStation 5 Section - Only visible on mobile */}
+
             <div className="block md:hidden bg-[#EDEDED] py-12">
                 <div className="flex flex-col items-center text-center px-6 max-w-sm mx-auto">
                     {/* Image */}
@@ -158,14 +153,13 @@ const Home = () => {
                         </div>
                     </div>
 
-                    {/* Title */}
+
                     <div className="mb-4">
                         <h2 className="text-[32px] sm:text-[36px] font-bold text-[#211c24] leading-[1.2]" style={{ fontFamily: 'SF Pro Display, system-ui, -apple-system, sans-serif' }}>
                             PlayStation 5
                         </h2>
                     </div>
 
-                    {/* Subtitle */}
                     <div className="mb-6">
                         <p className="text-[16px] sm:text-[18px] text-[#666] leading-[1.4] italic" style={{ fontFamily: 'SF Pro Display, system-ui, -apple-system, sans-serif' }}>
                             Incredibly powerful CPUs, GPUs, and an SSD with integrated I/O will redefine your PlayStation experience.
@@ -174,7 +168,7 @@ const Home = () => {
                 </div>
             </div>
 
-            {/* New Mobile MacBook Air Section - Only visible on mobile */}
+
             <div className="block md:hidden bg-[white] py-12">
                 <div className="flex flex-col items-center text-center px-6 max-w-sm mx-auto">
                     {/* Image */}
@@ -190,21 +184,21 @@ const Home = () => {
                         </div>
                     </div>
 
-                    {/* Title */}
+
                     <div className="mb-4">
                         <h2 className="text-[32px] sm:text-[36px] font-bold text-[#211c24] leading-[1.2]" style={{ fontFamily: 'SF Pro Display, system-ui, -apple-system, sans-serif' }}>
                             MacBook Air
                         </h2>
                     </div>
 
-                    {/* Subtitle */}
+
                     <div className="mb-6">
                         <p className="text-[16px] sm:text-[18px] text-[#666] leading-[1.4] italic" style={{ fontFamily: 'SF Pro Display, system-ui, -apple-system, sans-serif' }}>
                             The new 15‑inch MacBook Air makes room for more of what you love with a spacious Liquid Retina display.
                         </p>
                     </div>
 
-                    {/* Shop Now Button */}
+
                     <div>
                         <button className="bg-white text-[#211c24] border border-white px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-200" style={{ fontFamily: 'SF Pro Display, system-ui, -apple-system, sans-serif' }}>
                             Shop Now
@@ -215,7 +209,7 @@ const Home = () => {
 
             <div className="h-[550px] w-full hidden md:flex flex-col md:flex-row">
                 <div className="w-full md:w-1/2 h-full flex flex-col">
-                    {/* PS5 Section - Updated with closer text */}
+
                     <div className="h-1/2 w-full bg-white relative overflow-hidden flex items-center">
                         <div className="w-[45%] h-full relative">
                             <div className="absolute left-0 bottom-0 h-full w-full">
@@ -237,9 +231,8 @@ const Home = () => {
                         </div>
                     </div>
 
-                    {/* Yellow and Blue Sections */}
                     <div className="h-1/2 w-full flex">
-                        {/* Yellow Section with HP Image and Text */}
+
                         <div className="w-1/2 h-full bg-[#EDEDED] flex items-center">
                             <div className="w-1/2 h-full relative">
                                 <div className="absolute left-0 top-1/2 transform -translate-y-1/2" style={{ height: '275px', width: '245px' }}>
@@ -267,7 +260,6 @@ const Home = () => {
                             </div>
                         </div>
 
-                        {/* Blue Section with Larger VP Image */}
                         <div className="w-1/2 h-full bg-[#353535] flex items-center">
                             <div className="w-2/5 h-full relative">
                                 <div className="absolute left-0 top-1/2 transform -translate-y-1/2 h-[85%] w-full">
@@ -296,7 +288,6 @@ const Home = () => {
                     </div>
                 </div>
 
-                {/* MacBook Section */}
                 <div className="w-full md:w-1/2 h-full bg-[#EDEDED] relative overflow-hidden">
                     <div className="absolute top-1/2 transform -translate-y-1/2 left-8 z-10 pl-4 sm:pl-8">
                         <div className="text-[#211c24] max-w-md">

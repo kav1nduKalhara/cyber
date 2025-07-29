@@ -37,7 +37,7 @@ const Promotion = () => {
                 }}
             />
             <img
-                src="/123.png"
+                src="/124.png"
                 alt="Huawei"
                 style={{
                     width: '418px',
@@ -54,11 +54,11 @@ const Promotion = () => {
                 src="/125.png"
                 alt="Huawei"
                 style={{
-                    width: '120px',
+                    width: '220px',
                     height: '363px',
                     transform: 'rotate(180)',
                     position: 'absolute',
-                    left: '1345px',
+                    left: '1300px',
                     top: '130px',
                     objectFit: 'contain',
                     zIndex: 1

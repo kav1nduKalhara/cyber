@@ -30,7 +30,7 @@ const Header = () => {
     return (
         <>
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <nav className="w-full py-3 bg-white">
+                <nav className="w-full py-6 md:py-3 bg-white">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center">
                             <div className="flex-shrink-0">
@@ -41,7 +41,7 @@ const Header = () => {
                                 />
                             </div>
 
-                            {/* Desktop Search Bar */}
+
                             <div className="hidden md:block relative" style={{ marginLeft: '40px' }}>
                                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
                                     <img
@@ -67,7 +67,6 @@ const Header = () => {
                                 />
                             </div>
 
-                            {/* Navigation Links with 30px gap from search */}
                             <div className="hidden md:flex items-center" style={{ marginLeft: '50px' }}>
                                 <div className="flex items-center" style={{ gap: '52px' }}>
                                     <a href="#" className="text-gray-400 hover:text-black transition-colors duration-200 whitespace-nowrap text-base font-medium">
@@ -88,13 +87,13 @@ const Header = () => {
 
                         <div className="flex items-center space-x-2 sm:space-x-4 md:space-x-8 flex-shrink-0">
                             <button
-                                className="md:hidden text-black hover:text-gray-400 transition-colors duration-200"
+                                className="md:hidden text-black hover:text-gray-400 transition-colors duration-200 p-2"
                                 onClick={toggleMenu}
                             >
                                 {isMenuOpen ? (
-                                    <FaTimes className="w-5 h-5" />
+                                    <FaTimes className="w-6 h-6" />
                                 ) : (
-                                    <FaBars className="w-5 h-5" />
+                                    <FaBars className="w-6 h-6" />
                                 )}
                             </button>
 
@@ -139,62 +138,61 @@ const Header = () => {
                     </div>
 
                     {isMenuOpen && (
-                        <div className="md:hidden mt-4 space-y-4 pb-4 border-t border-gray-200 pt-4">
-                            <div className="flex flex-col space-y-4">
-                                <a href="#" className="text-gray-400 hover:text-black transition-colors duration-200 text-base font-medium">
+                        <div className="md:hidden mt-6 space-y-6 pb-6 border-t border-gray-200 pt-6">
+                            <div className="flex flex-col space-y-5">
+                                <a href="#" className="text-gray-400 hover:text-black transition-colors duration-200 text-lg font-medium">
                                     Home
                                 </a>
-                                <a href="#" className="text-gray-400 hover:text-black transition-colors duration-200 text-base font-medium">
+                                <a href="#" className="text-gray-400 hover:text-black transition-colors duration-200 text-lg font-medium">
                                     About
                                 </a>
-                                <a href="#" className="text-gray-400 hover:text-black transition-colors duration-200 text-base font-medium">
+                                <a href="#" className="text-gray-400 hover:text-black transition-colors duration-200 text-lg font-medium">
                                     Contact us
                                 </a>
-                                <a href="#" className="text-gray-400 hover:text-black transition-colors duration-200 text-base font-medium">
+                                <a href="#" className="text-gray-400 hover:text-black transition-colors duration-200 text-lg font-medium">
                                     Blog
                                 </a>
                             </div>
 
-                            {/* Mobile Action Icons in Menu */}
-                            <div className="flex items-center justify-center pt-4 border-t border-gray-100" style={{ gap: '24px' }}>
+                            <div className="flex items-center justify-center pt-6 border-t border-gray-100" style={{ gap: '32px' }}>
                                 <button
-                                    className="flex flex-col items-center text-black hover:text-gray-400 transition-colors duration-200 p-2 rounded-md hover:bg-gray-100"
+                                    className="flex flex-col items-center text-black hover:text-gray-400 transition-colors duration-200 p-3 rounded-md hover:bg-gray-100"
                                     onClick={handleFavoritesClick}
                                     aria-label="Favorites"
                                 >
                                     <img
                                         src="/Favorites.png"
                                         alt="Favorites"
-                                        style={{ width: '32px', height: '32px' }}
-                                        className="mb-1"
+                                        style={{ width: '36px', height: '36px' }}
+                                        className="mb-2"
                                     />
-                                    <span className="text-xs font-medium">Wishlist</span>
+                                    <span className="text-sm font-medium">Wishlist</span>
                                 </button>
                                 <button
-                                    className="flex flex-col items-center text-black hover:text-gray-400 transition-colors duration-200 p-2 rounded-md hover:bg-gray-100"
+                                    className="flex flex-col items-center text-black hover:text-gray-400 transition-colors duration-200 p-3 rounded-md hover:bg-gray-100"
                                     onClick={handleCartClick}
                                     aria-label="Shopping Cart"
                                 >
                                     <img
                                         src="/Cart.png"
                                         alt="Cart"
-                                        style={{ width: '32px', height: '32px' }}
-                                        className="mb-1"
+                                        style={{ width: '36px', height: '36px' }}
+                                        className="mb-2"
                                     />
-                                    <span className="text-xs font-medium">Cart</span>
+                                    <span className="text-sm font-medium">Cart</span>
                                 </button>
                                 <button
-                                    className="flex flex-col items-center text-black hover:text-gray-400 transition-colors duration-200 p-2 rounded-md hover:bg-gray-100"
+                                    className="flex flex-col items-center text-black hover:text-gray-400 transition-colors duration-200 p-3 rounded-md hover:bg-gray-100"
                                     onClick={handleUserClick}
                                     aria-label="User Profile"
                                 >
                                     <img
                                         src="/User.png"
                                         alt="User"
-                                        style={{ width: '32px', height: '32px' }}
-                                        className="mb-1"
+                                        style={{ width: '36px', height: '36px' }}
+                                        className="mb-2"
                                     />
-                                    <span className="text-xs font-medium">Profile</span>
+                                    <span className="text-sm font-medium">Profile</span>
                                 </button>
                             </div>
                         </div>
